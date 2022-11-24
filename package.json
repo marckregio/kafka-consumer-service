@@ -1,0 +1,46 @@
+{
+  "name": "ud-kafka-library",
+  "version": "1.0.0",
+  "description": "Common Kafka Library",
+  "main": "bin/index.js",
+  "scripts": {
+    "build": "npx gulp --releaseVersion 1.0.0",
+    "test": "npm run test",
+    "gulp:tasks": "npx gulp --tasks"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://maregio@bitbucket.org/maregio/ud-kafka-library.git"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "mak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://bitbucket.org/maregio/ud-kafka-library/issues"
+  },
+  "homepage": "https://bitbucket.org/maregio/ud-kafka-library#readme",
+  "dependencies": {
+    "config-dug": "^1.7.2",
+    "dotenv": "^16.0.3",
+    "kafkajs": "^2.2.3",
+    "kafkajs-snappy": "^1.1.0",
+    "winston": "^3.8.2"
+  },
+  "bundledDependencies": [
+    "config-dug",
+    "dotenv"
+  ],
+  "devDependencies": {
+    "esbuild": "^0.15.15",
+    "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
+    "gulp-replace": "^1.1.3",
+    "gulp-run": "^1.7.1"
+  },
+  "bundleDependencies": [
+    "config-dug",
+    "dotenv"
+  ]
+}
