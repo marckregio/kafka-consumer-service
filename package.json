@@ -44,7 +44,7 @@
     "config-dug",
     "dotenv",
     "kafkajs",
-    "kafka-snappy",
+    "kafkajs-snappy",
     "lodash",
     "uuid",
     "winston"
