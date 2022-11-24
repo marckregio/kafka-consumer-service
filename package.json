@@ -1,5 +1,5 @@
 {
-  "name": "kakfa-consumer-service",
+  "name": "kafka-consumer-service",
   "version": "1.0.0",
   "description": "Common Kafka Library",
   "main": "bin/index.js",
