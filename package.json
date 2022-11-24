@@ -38,5 +38,15 @@
     "gulp-clean": "^0.4.0",
     "gulp-replace": "^1.1.3",
     "gulp-run": "^1.7.1"
-  }
+  },
+  "bundleDependencies": [
+    "axios",
+    "config-dug",
+    "dotenv",
+    "kafkajs",
+    "kafka-snappy",
+    "lodash",
+    "uuid",
+    "winston"
+  ]
 }
