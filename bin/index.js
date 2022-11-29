@@ -73,6 +73,7 @@ var require_consumer = __commonJS({
     var httpRequest = require_httpRequest();
     var secrets2 = require("../node_modules/config-dug/build/index.js").default;
     CompressionCodecs[CompressionTypes.Snappy] = SnappyCodec;
+    var event;
     var Consumer2 = class {
       constructor() {
         this.consumer = this.initConsumer();
@@ -114,11 +115,14 @@ var require_consumer = __commonJS({
       async triggerWebhook({ batch, resolveOffset }) {
         _.map(batch.messages, async (message) => {
           const response = JSON.parse(message.value.toString());
-          logger.info(
-            `Received message with offset ${message.offset} from TM with cbi ${response.client_batch_id}`
-          );
-          await httpRequest.post(secrets2.CONSUMER_WEBHOOK_ENDPOINT, response);
-          resolveOffset(message.offset);
+          if (event !== response.client_batch_id) {
+            logger.info(
+              `Received message with offset ${message.offset} from TM with cbi ${response.client_batch_id}`
+            );
+            event = response.client_batch_id;
+            await httpRequest.post(secrets2.CONSUMER_WEBHOOK_ENDPOINT, response);
+            resolveOffset(message.offset);
+          }
         });
       }
     };
